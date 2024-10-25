@@ -618,6 +618,9 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        ts_ls = {},
+        tailwindcss = {},
+        eslint = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -660,6 +663,11 @@ require('lazy').setup({
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
+        },
+        settings = {
+          Lua = {
+            diagnostics = {},
+          },
         },
       }
     end,
