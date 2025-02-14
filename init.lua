@@ -189,8 +189,15 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Joseph custom keymaps
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Move half a window and center text' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move half a window and center text' })
+vim.keymap.set('n', '<leader>ga', ':!git add %<CR>', { noremap = true, silent = true, desc = 'Add current file to git' })
+vim.keymap.set('n', '<leader>gs', ':!git status<CR>', { noremap = true, silent = true, desc = 'See git status' })
+vim.keymap.set('n', '<C-/>', 'mm0i//<Esc>`m', { desc = 'Add a single line comment to the beginning of the line' })
+vim.keymap.set('i', '<C-BS>', '<C-w>', { desc = 'Delete till the beginning of the word' })
+vim.keymap.set('i', '<C-H>', '<C-w>', { desc = 'Delete till the beginning of the word' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -620,6 +627,7 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        pyright = {},
         ts_ls = {},
         tailwindcss = {},
         eslint = {},
@@ -785,7 +793,7 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<Tab>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines

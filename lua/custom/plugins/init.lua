@@ -4,6 +4,15 @@
 -- See the kickstart.nvim README for more information
 return {
   {
+    'neovim/nvim-lspconfig',
+    config = function()
+      local lspconfig = require 'lspconfig'
+
+      -- Setup Pyright for Python
+      lspconfig.pyright.setup {}
+    end,
+  },
+  {
     'windp/nvim-ts-autotag',
     ft = {
       'javascript',
@@ -24,6 +33,7 @@ return {
         'javascript',
         'typescript',
         'tsx',
+        'python',
       }
       return opts
     end,
