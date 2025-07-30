@@ -19,6 +19,7 @@ return {
       'javascriptreact',
       'typescript',
       'typescriptreact',
+      'astro',
     },
     config = function()
       require('nvim-ts-autotag').setup()
@@ -34,6 +35,7 @@ return {
         'typescript',
         'tsx',
         'python',
+        'astro',
       }
       return opts
     end,

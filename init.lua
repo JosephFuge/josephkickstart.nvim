@@ -199,6 +199,9 @@ vim.keymap.set('n', '<C-/>', 'mm0i//<Esc>`m', { desc = 'Add a single line commen
 vim.keymap.set('i', '<C-BS>', '<C-w>', { desc = 'Delete till the beginning of the word' })
 vim.keymap.set('i', '<C-H>', '<C-w>', { desc = 'Delete till the beginning of the word' })
 
+-- Joseph Other Custom Setup
+vim.api.nvim_exec([[ autocmd BufNewFile,BufRead *.astro set filetype=astro ]], false)
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -645,6 +648,7 @@ require('lazy').setup({
             },
           },
         },
+        astro = {},
       }
 
       -- Ensure the servers and tools above are installed
